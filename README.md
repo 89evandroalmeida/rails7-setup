@@ -1,24 +1,19 @@
-# README
+# Rails 7 Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Configuração de projeto rodando em Rails 7 contendo alguns mecanismos 
+arquiteturais definidos a fim de agilizar o processo de desenvolvimento.
 
-Things you may want to cover:
+## Linguagem/Framework
 
-* Ruby version
+Desenvolvido em **Rails 7.0.4** sobre **Ruby 3.1.2**
 
-* System dependencies
+Comando para criação do projeto:
 
-* Configuration
+`rails new rails7-setup -j esbuild --css bootstrap --database=postgresql`
 
-* Database creation
+---
 
-* Database initialization
+TODO:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Configurar Devise com LDAP
+* Implantar em Docker
