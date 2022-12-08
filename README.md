@@ -3,9 +3,21 @@
 Configuração de projeto rodando em Rails 7 contendo alguns mecanismos 
 arquiteturais definidos a fim de agilizar o processo de desenvolvimento.
 
-## Linguagem/Framework
 
-Desenvolvido em **Rails 7.0.4** sobre **Ruby 3.1.2**
+
+
+
+
+## Mecanismos Arquiteturais
+
+| Design               | Implementação | 
+|----------------------|---------------|
+| Linguagem            | Ruby 3.1.2    |
+| Framework web        | Rails 7.0.4   |
+| Front-end responsivo | Bootstrap     |
+| Autenticação         | Devise        |
+
+---
 
 Comando para criação do projeto:
 
@@ -15,5 +27,4 @@ Comando para criação do projeto:
 
 TODO:
 
-* Configurar Devise com LDAP
 * Implantar em Docker
