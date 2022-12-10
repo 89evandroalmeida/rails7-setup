@@ -1,46 +1,130 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <title>Rails 7 Setup</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+  <!-- Custom fonts for this template-->
+  <%= stylesheet_link_tag "fontawesome-free/css/all.min.css" %>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+<div class="container">
+
+  <div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+      <!-- Nested Row within Card Body -->
+      <div class="row">
+        <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+        <div class="col-lg-7">
+          <div class="p-5">
+            <div class="text-center">
+              <% if notice %>
+                <p class="notice alert-warning"><%= notice %></p>
+              <% end %>
+              <% if alert %>
+                <p class="alert alert-danger"><%= alert %></p>
+              <% end %>
+            </div>
+
+            <div class="text-center">
+              <h2>Edit <%= resource_name.to_s.humanize %></h2>
+            </div>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "user" }) do |f| %>
+              <%= render "users/shared/error_messages", resource: resource %>
+
+              <div class="form-group">
+                <%= f.email_field :email,
+                                  autofocus: true,
+                                  autocomplete: "email",
+                                  placeholder: "Email Address",
+                                  class: "form-control form-control-user" %>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <%= f.password_field :password,
+                                       autocomplete: "new-password",
+                                       placeholder: "Password",
+                                       class: "form-control form-control-user" %><br />
+                  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+                  <% if @minimum_password_length %>
+                    <br />
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                  <% end %>
+                </div>
+                <div class="col-sm-6">
+                  <%= f.password_field :password_confirmation,
+                                       autocomplete: "new-password",
+                                       placeholder: "Repeat Password",
+                                       class: "form-control form-control-user" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.password_field :current_password,
+                                     autocomplete: "current_password",
+                                     placeholder: "Current Password",
+                                     class: "form-control form-control-user" %><br>
+                <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up",
+                             class: "btn btn-primary btn-user btn-block" %>
+              </div>
+
+            <% end  %>
+
+            <h3>Cancel my account</h3>
+
+            <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+            <%= link_to "Back", :back %>
+
+            <hr>
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+<!-- Bootstrap core JavaScript-->
+<%= javascript_include_tag "jquery/jquery.min.js" %>
+<%= javascript_include_tag "bootstrap/js/bootstrap.bundle.min.js" %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<!-- Core plugin JavaScript-->
+<%= javascript_include_tag "jquery-easing/jquery.easing.min.js" %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+<!-- Custom scripts for all pages-->
+<%= javascript_include_tag "sb-admin-2.min.js" %>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+</body>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</html>

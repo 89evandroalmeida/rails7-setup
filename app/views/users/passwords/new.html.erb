@@ -77,16 +77,7 @@
                 <% end %>
 
                 <hr>
-                <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-                  <div class="text-center">
-                    <%= link_to "Create an Account", new_registration_path(resource_name), class: "small" %><br />
-                  </div>
-                <% end %>
-                <%- if controller_name != 'sessions' %>
-                  <div class="text-center">
-                    <%= link_to "Already have an account? Login!", new_session_path(resource_name), class: "small" %><br />
-                  </div>
-                <% end %>
+                <%= render "users/shared/links" %>
               </div>
             </div>
           </div>
