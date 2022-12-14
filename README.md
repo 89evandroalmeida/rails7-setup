@@ -14,6 +14,7 @@ arquiteturais definidos a fim de agilizar o processo de desenvolvimento.
 |----------------------|---------------|
 | Linguagem            | Ruby 3.1.2    |
 | Framework web        | Rails 7.0.4   |
+| Banco de dados       | PostgreSQL    |
 | Front-end responsivo | Bootstrap     |
 | Autenticação         | Devise        |
 
@@ -27,4 +28,5 @@ Comando para criação do projeto:
 
 TODO:
 
+* Substituir cada label com a tag do I18n
 * Implantar em Docker

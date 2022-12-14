@@ -39,10 +39,13 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true  # alterar para false em produção
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.default_url_options = {
+    host: ENV["DEFAULT_URL"],
+    port: ENV["DEFAULT_PORT"]
+  }
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
+    address: ENV["SMTP_ADDRESS"],
+    port: ENV["SMTP_PORT"],
     user_name: ENV["SMTP_USER"],
     password: ENV["SMTP_PASSWORD"],
     authentication: "plain",
