@@ -56,7 +56,7 @@
                 <%= f.email_field :email,
                                   autofocus: true,
                                   autocomplete: "email",
-                                  placeholder: "Email Address",
+                                  placeholder: t(".email_address"),
                                   class: "form-control form-control-user" %>
               </div>
 
@@ -68,18 +68,18 @@
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <%= f.password_field :password,
                                        autocomplete: "new-password",
-                                       placeholder: "Password",
+                                       placeholder: t(".password"),
                                        class: "form-control form-control-user" %><br />
-                  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+                  <%= f.label :password %> <i>(<%= t(".leave_blank_if_you_don_t_want_to_change_it") %>)</i>
                   <% if @minimum_password_length %>
                     <br />
-                    <em><%= @minimum_password_length %> characters minimum</em>
+                    <%= t("users.shared.minimum_password_length", count: @minimum_password_length) %>
                   <% end %>
                 </div>
                 <div class="col-sm-6">
                   <%= f.password_field :password_confirmation,
                                        autocomplete: "new-password",
-                                       placeholder: "Repeat Password",
+                                       placeholder: t(".repeat_password"),
                                        class: "form-control form-control-user" %>
                 </div>
               </div>
@@ -87,23 +87,26 @@
               <div class="form-group">
                 <%= f.password_field :current_password,
                                      autocomplete: "current_password",
-                                     placeholder: "Current Password",
+                                     placeholder: t(".current_password"),
                                      class: "form-control form-control-user" %><br>
-                <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+                <%= f.label :current_password %> <i>
+                (<%= t(".we_need_your_current_password_to_confirm_your_changes") %>)</i>
               </div>
 
               <div class="actions">
-                <%= f.submit "Sign up",
+                <%= f.submit t(".update"),
                              class: "btn btn-primary btn-user btn-block" %>
               </div>
 
             <% end  %>
 
-            <h3>Cancel my account</h3>
+            <h3><%= t(".cancel_my_account") %></h3>
 
-            <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <p><%= t(".unhappy") %> <%= button_to t(".cancel_my_account"),
+                                                  registration_path(resource_name),
+                                                  data: { confirm: t(".are_you_sure") }, method: :delete %></p>
 
-            <%= link_to "Back", :back %>
+            <%= link_to t("users.shared.links.back"), :back %>
 
             <hr>
             <%= render "users/shared/links" %>

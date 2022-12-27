@@ -43,7 +43,7 @@
             <div class="col-lg-6">
               <div class="p-5">
                 <div class="text-center">
-                  <h2>Resend confirmation instructions</h2>
+                  <h2><%= t(".resend_confirmation_instructions") %></h2>
                 </div>
 
                 <div class="text-center">
@@ -62,12 +62,13 @@
                     <%= f.email_field :email,
                                       autofocus: true,
                                       autocomplete: "email",
+                                      placeholder: t(".enter_email_address"),
                                       class: "form-control form-control-user",
                                       value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
                   </div>
 
                   <div class="actions">
-                    <%= f.submit "Resend confirmation instructions",
+                    <%= f.submit t(".resend_confirmation_instructions"),
                                  class: "btn btn-primary btn-user btn-block" %>
                   </div>
                 <% end %>

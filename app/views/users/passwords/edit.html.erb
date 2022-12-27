@@ -43,7 +43,7 @@
             <div class="col-lg-6">
               <div class="p-5">
                 <div class="text-center">
-                  <h2>Change your password</h2>
+                  <h2><%= t(".change_your_password") %></h2>
                 </div>
 
                 <div class="text-center">
@@ -63,22 +63,22 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                       <%= f.password_field :password,
                                            autocomplete: "new-password",
-                                           placeholder: "Password",
+                                           placeholder: t(".new_password"),
                                            class: "form-control form-control-user" %><br />
                       <% if @minimum_password_length %>
-                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <em><%= t("users.shared.minimum_password_length", count: @minimum_password_length) %></em>
                       <% end %>
                     </div>
                     <div class="col-sm-6">
                       <%= f.password_field :password_confirmation,
                                            autocomplete: "new-password",
-                                           placeholder: "Repeat Password",
+                                           placeholder: t(".repeat_password"),
                                            class: "form-control form-control-user" %>
                     </div>
                   </div>
 
                   <div class="actions">
-                    <%= f.submit "Change my password",
+                    <%= f.submit t(".change_my_password"),
                                  class: "btn btn-primary btn-user btn-block" %>
                   </div>
                 <% end %>

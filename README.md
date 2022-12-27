@@ -34,8 +34,6 @@ arquiteturais definidos a fim de agilizar o processo de desenvolvimento.
 
 ### TODO:
 
-* Substituir cada label com a tag do I18n
-* Implantar em Docker
 
 ---
 

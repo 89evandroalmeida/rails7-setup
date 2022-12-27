@@ -29,13 +29,7 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
-  users:
-    confirmations:
-      confirmed: A sua conta foi confirmada com sucesso.
-      new:
-        resend_confirmation_instructions: Reenviar instruções de confirmação
-      send_instructions: Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.
-      send_paranoid_instructions: Se o seu e-mail existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos.
+  devise:
     failure:
       already_authenticated: Você já está autenticado.
       inactive: A sua conta ainda não foi ativada.
@@ -46,6 +40,16 @@ pt-BR:
       timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
       unauthenticated: Para continuar, faça login ou registre-se.
       unconfirmed: Antes de continuar, confirme a sua conta.
+    confirmations:
+      user:
+        confirmed: A sua conta foi confirmada com sucesso.
+  users:
+    confirmations:
+      new:
+        enter_email_address: Preencha o e-mail...
+        resend_confirmation_instructions: Reenviar instruções de confirmação
+      send_instructions: Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.
+      send_paranoid_instructions: Se o seu e-mail existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos.
     mailer:
       confirmation_instructions:
         action: Confirmar minha conta
@@ -83,8 +87,11 @@ pt-BR:
         change_your_password: Alterar sua senha
         confirm_new_password: Confirme sua nova senha
         new_password: Nova senha
+        repeat_password: Repita a senha
       new:
         forgot_your_password: Esqueceu sua senha?
+        explanation: Isso acontece! Basta digitar seu endereço de e-mail abaixo e enviaremos um link para redefinir sua senha!
+        enter_email_address: Preencha o e-mail...
         send_me_reset_password_instructions: Enviar instruções para redefinição da senha
       no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente.
       send_instructions: Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha.
@@ -102,8 +109,17 @@ pt-BR:
         unhappy: Não está contente?
         update: Atualizar
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+        email_address: Endereço de e-mail
+        password: Senha
+        repeat_password: Repita a senha
+        current_password: Senha atual
       new:
-        sign_up: Inscrever-se
+        sign_up: Cadastre-se
+        create_account: Crie uma conta!
+        email_address: Endereço de e-mail
+        password: Senha
+        repeat_password: Repita a senha
+        sign_up_form: Cadastrar
       signed_up: Bem vindo! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
@@ -115,6 +131,9 @@ pt-BR:
       already_signed_out: Logout efetuado com sucesso.
       new:
         sign_in: Entrar
+        welcome_back: Bem-vindo(a)!
+        enter_email_address: Preencha o e-mail...
+        password: Senha
       signed_in: Login efetuado com sucesso.
       signed_out: Logout efetuado com sucesso.
     shared:
@@ -125,13 +144,14 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         sign_in: Login
         sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        sign_up: Cadastre-se
       minimum_password_length:
-        one: "(Mínimo de %{count} caractere)"
-        other: "(Mínimo de %{count} caracteres)"
+        one: "(A senha deve ter ao menos %{count} caractere)"
+        other: "(A senha deve ter ao menos %{count} caracteres)"
     unlocks:
       new:
         resend_unlock_instructions: Reenviar instruções de desbloqueio
+        enter_email_address: Preencha o e-mail...
       send_instructions: Dentro de minutos, você receberá um e-mail com instruções de desbloqueio da sua conta.
       send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela.
       unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.

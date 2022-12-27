@@ -46,7 +46,9 @@
             </div>
 
             <div class="text-center">
-              <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              <h1 class="h4 text-gray-900 mb-4">
+                <%= t(".create_account") %>
+              </h1>
             </div>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "user" }) do |f| %>
@@ -66,28 +68,32 @@
                 <%= f.email_field :email,
                                   autofocus: true,
                                   autocomplete: "email",
-                                  placeholder: "Email Address",
+                                  placeholder: t(".email_address"),
                                   class: "form-control form-control-user" %>
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <%= f.password_field :password,
                                        autocomplete: "new-password",
-                                       placeholder: "Password",
-                                       class: "form-control form-control-user" %><br />
-                  <% if @minimum_password_length %>
-                    <em>(<%= @minimum_password_length %> characters minimum)</em>
-                  <% end %>
+                                       placeholder: t(".password"),
+                                       class: "form-control form-control-user" %>
                 </div>
                 <div class="col-sm-6">
                   <%= f.password_field :password_confirmation,
                                        autocomplete: "new-password",
-                                       placeholder: "Repeat Password",
+                                       placeholder: t(".repeat_password"),
                                        class: "form-control form-control-user" %>
                 </div>
               </div>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                <% if @minimum_password_length %>
+                  <em><%= t("users.shared.minimum_password_length", count: @minimum_password_length) %></em>
+                <% end %>
+                </div>
+              </div>
               <div class="actions">
-                <%= f.submit "Sign up", class: "btn btn-primary btn-user btn-block" %>
+                <%= f.submit t(".sign_up_form"), class: "btn btn-primary btn-user btn-block" %>
               </div>
 
             <% end  %>

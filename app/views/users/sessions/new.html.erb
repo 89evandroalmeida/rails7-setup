@@ -51,7 +51,9 @@
                 </div>
 
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                  <h1 class="h4 text-gray-900 mb-4">
+                    <%= t(".welcome_back") %>
+                  </h1>
                 </div>
 
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "user" }) do |f| %>
@@ -60,14 +62,14 @@
                                       autofocus: true,
                                       autocomplete: "email",
                                       "aria-describedby": "emailHelp",
-                                      placeholder: "Enter Email Address...",
+                                      placeholder: t(".enter_email_address"),
                                       class: "form-control form-control-user" %>
                   </div>
 
                   <div class="form-group">
                     <%= f.password_field :password,
                                          autocomplete: "current-password",
-                                         placeholder: "Password",
+                                         placeholder: t(".password"),
                                          class: "form-control form-control-user"%>
 
                   </div>
