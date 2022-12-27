@@ -139,6 +139,14 @@ pt-BR:
       wrong_length:
         one: não possui o tamanho esperado (%{count} caracter)
         other: não possui o tamanho esperado (%{count} caracteres)
+      not_found:
+        title: Página não encontrada
+        lead: A página que você busca não existe.
+        go_home: Voltar para página inicial
+      internal_server_error:
+        title: Erro na aplicação
+        lead: Ocorreu um erro na aplicação. Favor contatar o administrador.
+        go_home: Voltar para página inicial
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
