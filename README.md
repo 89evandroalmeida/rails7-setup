@@ -17,23 +17,31 @@ arquiteturais definidos a fim de agilizar o processo de desenvolvimento.
 
 ---
 
-### Comandos
+## Comandos
 
-#### Criação do projeto:
+### Criação do projeto:
+
+Este comando serve apenas como uma referência, pois, ao clonar o projeto, a estrutura do Rails já estará pronta.
 
 `rails new rails7-setup -j esbuild --css bootstrap --database=postgresql`
+<br/>
+<br/>
+### Atualização de código e reexecução:
 
-#### Docker Compose:
+A cada vez que desejar executar um container com a versão mais recente das imagens:
 
 `docker-compose up -d --build`
+<br/>
+<br/>
+### Primeira execução:
 
-`docker compose run --rm web bin/rails db:setup`
+Na primeira vez que você for executar o código, será necessário criar as bases de dados:
 
+`docker-compose up -d --build`
+<br/>
+`docker exec sistemaacademico_web_1 bin/rails db:setup`
 
----
-
-### TODO:
-
+E também será preciso copiar o arquivo `.env.example` para um novo arquivo `.env` e preencher as suas credenciais lá dentro.
 
 ---
 
