@@ -39,7 +39,7 @@ Na primeira vez que você for executar o código, será necessário criar as bas
 
 `docker-compose up -d --build`
 <br/>
-`docker exec sistemaacademico_web_1 bin/rails db:setup`
+`docker exec rails7setup_web_1 bin/rails db:setup`
 
 E também será preciso copiar o arquivo `.env.example` para um novo arquivo `.env` e preencher as suas credenciais lá dentro.
 
